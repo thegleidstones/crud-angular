@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { first } from 'rxjs/operators';
 
 import { Course } from '../model/course';
-import { delay, first, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +43,10 @@ export class CoursesService {
 
   private update(record: Partial<Course>): Observable<Course> {
     return this.httpClient.put<Course>(`${this.API}/${record._id}`, record).pipe(first());
+  }
+
+  delete(id: string): Observable<Object> {
+    return this.httpClient.delete(`${this.API}/${id}`).pipe(first());
   }
 
 }
