@@ -11,17 +11,15 @@ import { CoursesListComponent } from './components/courses-list/courses-list.com
 
 
 @NgModule({
-  declarations: [
-    CoursesComponent,
-    CourseFormComponent,
-    CoursesListComponent
-  ],
-  imports: [
-    AppMaterialModule,
-    CommonModule,
-    CoursesRoutingModule,
-    ReactiveFormsModule,
-    SharedModule
-  ]
+    imports: [
+        AppMaterialModule,
+        CommonModule,
+        CoursesRoutingModule,
+        ReactiveFormsModule,
+        SharedModule,
+        CoursesComponent,
+        CourseFormComponent,
+        CoursesListComponent
+    ]
 })
 export class CoursesModule { }
