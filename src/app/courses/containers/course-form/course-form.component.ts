@@ -1,28 +1,29 @@
-import { Location, NgIf, NgFor } from '@angular/common';
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NonNullableFormBuilder, UntypedFormArray, Validators, ReactiveFormsModule } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+
+import { MatIconButton, MatButton } from '@angular/material/button';
+import { MatCard, MatCardContent, MatCardActions } from '@angular/material/card';
+import { MatOption } from '@angular/material/core';
+import { MatFormField, MatHint, MatError, MatLabel } from '@angular/material/form-field';
+import { MatIcon } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
+import { MatSelect } from '@angular/material/select';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatToolbar } from '@angular/material/toolbar';
 
 import { CoursesService } from '../../services/courses.service';
 import { Course } from '../../model/course';
 import { Lesson } from '../../model/lesson';
 import { FormUtilsService } from 'src/app/shared/form/form-utils.service';
-import { MatIcon } from '@angular/material/icon';
-import { MatIconButton, MatButton } from '@angular/material/button';
-import { MatOption } from '@angular/material/core';
-import { MatSelect } from '@angular/material/select';
-import { MatInput } from '@angular/material/input';
-import { MatFormField, MatHint, MatError, MatLabel } from '@angular/material/form-field';
-import { MatToolbar } from '@angular/material/toolbar';
-import { MatCard, MatCardContent, MatCardActions } from '@angular/material/card';
 
 @Component({
     selector: 'app-course-form',
     templateUrl: './course-form.component.html',
     styleUrls: ['./course-form.component.scss'],
     standalone: true,
-    imports: [MatCard, MatToolbar, MatCardContent, ReactiveFormsModule, MatFormField, MatInput, MatHint, NgIf, MatError, MatLabel, MatSelect, MatOption, MatIconButton, MatIcon, NgFor, MatCardActions, MatButton]
+    imports: [MatCard, MatToolbar, MatCardContent, ReactiveFormsModule, MatFormField, MatInput, MatHint, MatError, MatLabel, MatSelect, MatOption, MatIconButton, MatIcon, MatCardActions, MatButton]
 })
 export class CourseFormComponent implements OnInit {
   form!: FormGroup;
